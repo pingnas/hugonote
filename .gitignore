@@ -1,0 +1,11 @@
+# Hugo 生成的静态网页
+/public/
+
+# Hugo 构建缓存及锁文件
+/resources/
+.hugo_build.lock
+.hugo_cache/
+
+# 编辑器临时文件 (根据你的编辑器调整)
+.DS_Store
+.idea/
