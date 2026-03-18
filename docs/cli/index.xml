@@ -1,24 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note</title><link>https://pingnas.github.io/hugonote/</link><description>Recent content on Note</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://pingnas.github.io/hugonote/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://pingnas.github.io/hugonote/docs/backup/chocolatey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/backup/chocolatey/</guid><description>&lt;h1 id="chocolatey"&gt;Chocolatey&lt;a class="anchor" href="#chocolatey"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;Windows 程序包管理器，现代软件自动化&lt;/p&gt;
-&lt;h2 id="参考"&gt;参考&lt;a class="anchor" href="#%e5%8f%82%e8%80%83"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://chocolatey.org/"&gt;The Package Manager for Windows&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="命令"&gt;命令&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 查找 xxx 安装包&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco search xxx
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 查看 xxx 安装包信息&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco info xxx
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 安装 xxx 软件&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco install xxx
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 升级 xxx 软件&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco upgrade xxx
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 卸载 xxx 软件&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco uninstall xxx&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</guid><description>&lt;h1 id="lazydocker"&gt;lazydocker&lt;a class="anchor" href="#lazydocker"&gt;#&lt;/a&gt;&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note</title><link>https://pingnas.github.io/hugonote/docs/cli/</link><description>Recent content on Note</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://pingnas.github.io/hugonote/docs/cli/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</guid><description>&lt;h1 id="lazydocker"&gt;lazydocker&lt;a class="anchor" href="#lazydocker"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;更轻松的 Docker 管理方式&lt;/p&gt;
 &lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
@@ -262,13 +242,4 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install ./yazi-x86_64-unknown-linux-gnu.deb
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/%E5%8D%9A%E5%AE%A2%E5%88%97%E8%A1%A8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/%E5%8D%9A%E5%AE%A2%E5%88%97%E8%A1%A8/</guid><description>&lt;h1 id="博客列表"&gt;博客列表&lt;a class="anchor" href="#%e5%8d%9a%e5%ae%a2%e5%88%97%e8%a1%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id="参考"&gt;参考&lt;a class="anchor" href="#%e5%8f%82%e8%80%83"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/timqian/chinese-independent-blogs"&gt;中文独立博客列表&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="浏览"&gt;浏览&lt;a class="anchor" href="#%e6%b5%8f%e8%a7%88"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.ruanyifeng.com/blog/"&gt;阮一峰的网络日志&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://utc8times.elsetech.app/?page=1"&gt;独立博主俱乐部&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item></channel></rss>
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>
