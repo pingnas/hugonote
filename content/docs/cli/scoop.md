@@ -31,6 +31,9 @@ scoop hold <app_name>
 # 解除禁止更新app
 scoop unhold <app_name>
 
+# 安装特点版本
+scoop install <app>@<version>`
+
 # 清理旧版本 
 scoop cleanup <app_name>
 

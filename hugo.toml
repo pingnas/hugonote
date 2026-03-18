@@ -1,3 +1,7 @@
 baseURL = 'https://pingnas.github.io/hugonote/'
 languageCode = 'en-us'
 title = 'Note'
+
+[markup]
+  [markup.highlight]
+    style = 'paraiso-light'
