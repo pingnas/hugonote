@@ -12,7 +12,7 @@
 > 安装
 ```sh
 scoop install wezterm
-reg import "C:\Users\toppine\scoop\apps\wezterm\current\install-context.reg"
+reg import "C:\Users\xxx\scoop\apps\wezterm\current\install-context.reg"
 
 # 终端启动
 wezterm-gui

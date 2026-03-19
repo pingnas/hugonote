@@ -4,3 +4,5 @@
 
 ## 资料
 - [lazygit](https://github.com/jesseduffield/lazygit)
+
+## wsl使用
