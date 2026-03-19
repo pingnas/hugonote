@@ -1,0 +1,196 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Wsl debian# 我的默认base debian
+安装wsl# # 版本 wsl --list --online # 安装debian wsl --install -d Debian禁用 WSL 的 Windows$PATH 互操作性# # 运行以下命令以**root权限**打开文件： sudo vi /etc/wsl.conf # 输入您的 WSL 用户密码。 # 单击`i`进入编辑模式（插入模式）。 # 输入或修改内容： [interop] appendWindowsPath = false # 单击`Esc`退出编辑模式。 # 输入`:wq`(保存并退出)。 # 修改`/etc/wsl.conf`后，您必须完全关闭并重新启动 WSL 才能更改生效。 wsl --shutdown进入wsl# # base sudo apt update && sudo apt install -y curl wget vim git build-essential iputils-ping net-tools htop dnsutils unzip zip procps sudo apt install git-lfs git lfs install # 清理安装产生的缓存，节省 WSL 空间 sudo apt autoremove -y && sudo apt clean安装脚本# 安装 lazygit
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://pingnas.github.io/hugonote/docs/cli/wsl-debian/"><meta property="og:site_name" content="Note"><meta property="og:title" content="Note"><meta property="og:description" content="Wsl debian# 我的默认base debian
+安装wsl# # 版本 wsl --list --online # 安装debian wsl --install -d Debian禁用 WSL 的 Windows$PATH 互操作性# # 运行以下命令以**root权限**打开文件： sudo vi /etc/wsl.conf # 输入您的 WSL 用户密码。 # 单击`i`进入编辑模式（插入模式）。 # 输入或修改内容： [interop] appendWindowsPath = false # 单击`Esc`退出编辑模式。 # 输入`:wq`(保存并退出)。 # 修改`/etc/wsl.conf`后，您必须完全关闭并重新启动 WSL 才能更改生效。 wsl --shutdown进入wsl# # base sudo apt update && sudo apt install -y curl wget vim git build-essential iputils-ping net-tools htop dnsutils unzip zip procps sudo apt install git-lfs git lfs install # 清理安装产生的缓存，节省 WSL 空间 sudo apt autoremove -y && sudo apt clean安装脚本# 安装 lazygit"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta itemprop=name content="Note"><meta itemprop=description content="Wsl debian# 我的默认base debian
+安装wsl# # 版本 wsl --list --online # 安装debian wsl --install -d Debian禁用 WSL 的 Windows$PATH 互操作性# # 运行以下命令以**root权限**打开文件： sudo vi /etc/wsl.conf # 输入您的 WSL 用户密码。 # 单击`i`进入编辑模式（插入模式）。 # 输入或修改内容： [interop] appendWindowsPath = false # 单击`Esc`退出编辑模式。 # 输入`:wq`(保存并退出)。 # 修改`/etc/wsl.conf`后，您必须完全关闭并重新启动 WSL 才能更改生效。 wsl --shutdown进入wsl# # base sudo apt update && sudo apt install -y curl wget vim git build-essential iputils-ping net-tools htop dnsutils unzip zip procps sudo apt install git-lfs git lfs install # 清理安装产生的缓存，节省 WSL 空间 sudo apt autoremove -y && sudo apt clean安装脚本# 安装 lazygit"><meta itemprop=wordCount content="498"><title>Wsl Debian | Note</title><link rel=icon href=/hugonote/favicon.png><link rel=manifest href=/hugonote/manifest.json><link rel=canonical href=https://pingnas.github.io/hugonote/docs/cli/wsl-debian/><link rel=stylesheet href=/hugonote/book.min.4d6d5ad3b0ae85d2a15b20ab217863f70db543e46314629e239ced759e674898.css integrity="sha256-TW1a07CuhdKhWyCrIXhj9w21Q+RjFGKeI5ztdZ5nSJg=" crossorigin=anonymous><script defer src=/hugonote/fuse.min.js></script><script defer src=/hugonote/en.search.min.7296bf7d0e96967e3183bb136721f382baa0d38540f9976b2a06749d7bd14025.js integrity="sha256-cpa/fQ6Wln4xg7sTZyHzgrqg04VA+ZdrKgZ0nXvRQCU=" crossorigin=anonymous></script></head><body dir=ltr class="book-kind-page book-type-docs"><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/hugonote/><span>Note</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li class=book-section-flat><a>Backup</a><ul><li><a href=/hugonote/docs/backup/chocolatey/>Chocolatey</a></li></ul></li><li class=book-section-flat><a>CLI</a><ul><li><a href=/hugonote/docs/cli/git/>Git</a></li><li><a href=/hugonote/docs/cli/lazydocker/>Lazydocker</a></li><li><a href=/hugonote/docs/cli/lazygit/>Lazygit</a></li><li><a href=/hugonote/docs/cli/scoop/>Scoop</a></li><li><a href=/hugonote/docs/cli/tmux/>Tmux</a></li><li><a href=/hugonote/docs/cli/wezterm/>Wezterm</a></li><li><a href=/hugonote/docs/cli/windows-terminal/>Windows Terminal</a></li><li><a href=/hugonote/docs/cli/winget/>Winget</a></li><li><a href=/hugonote/docs/cli/wsl-debian/ class=active>Wsl Debian</a></li><li><a href=/hugonote/docs/cli/yazi/>Yazi</a></li><li><a href=/hugonote/docs/cli/zsh/>Zsh</a></li></ul></li><li><a href=/hugonote/docs/%E5%8D%9A%E5%AE%A2%E5%88%97%E8%A1%A8/>博客列表</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/hugonote/icons/menu.svg class=book-icon alt=Menu></label><h3>Wsl Debian</h3><label for=toc-control><img src=/hugonote/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#安装wsl>安装wsl</a></li><li><a href=#禁用-wsl-的-windowspath-互操作性>禁用 WSL 的 Windows<code>$PATH</code> 互操作性</a></li><li><a href=#进入wsl>进入wsl</a></li><li><a href=#安装脚本>安装脚本</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=wsl-debian>Wsl debian<a class=anchor href=#wsl-debian>#</a></h1><p>我的默认base debian</p><h2 id=安装wsl>安装wsl<a class=anchor href=#%e5%ae%89%e8%a3%85wsl>#</a></h2><div class=highlight><pre tabindex=0 style=color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#8d8687># 版本</span>
+</span></span><span style=display:flex><span>wsl --list --online
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8d8687># 安装debian</span>
+</span></span><span style=display:flex><span>wsl --install -d Debian</span></span></code></pre></div><h2 id=禁用-wsl-的-windowspath-互操作性>禁用 WSL 的 Windows<code>$PATH</code> 互操作性<a class=anchor href=#%e7%a6%81%e7%94%a8-wsl-%e7%9a%84-windowspath-%e4%ba%92%e6%93%8d%e4%bd%9c%e6%80%a7>#</a></h2><div class=highlight><pre tabindex=0 style=color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#8d8687># 运行以下命令以**root权限**打开文件：</span>
+</span></span><span style=display:flex><span>sudo vi /etc/wsl.conf
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8d8687># 输入您的 WSL 用户密码。</span>
+</span></span><span style=display:flex><span><span style=color:#8d8687># 单击`i`进入编辑模式（插入模式）。</span>
+</span></span><span style=display:flex><span><span style=color:#8d8687># 输入或修改内容：</span>
+</span></span><span style=display:flex><span><span style=color:#5bc4bf>[</span>interop<span style=color:#5bc4bf>]</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>appendWindowsPath</span> <span style=color:#5bc4bf>=</span> false
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8d8687># 单击`Esc`退出编辑模式。</span>
+</span></span><span style=display:flex><span><span style=color:#8d8687># 输入`:wq`(保存并退出)。</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8d8687># 修改`/etc/wsl.conf`后，您必须完全关闭并重新启动 WSL 才能更改生效。</span>
+</span></span><span style=display:flex><span>wsl --shutdown</span></span></code></pre></div><h2 id=进入wsl>进入wsl<a class=anchor href=#%e8%bf%9b%e5%85%a5wsl>#</a></h2><div class=highlight><pre tabindex=0 style=color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#8d8687># base</span>
+</span></span><span style=display:flex><span>sudo apt update <span style=color:#5bc4bf>&amp;&amp;</span> sudo apt install -y curl wget vim git build-essential iputils-ping net-tools htop dnsutils unzip zip procps 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo apt install git-lfs
+</span></span><span style=display:flex><span>git lfs install
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8d8687># 清理安装产生的缓存，节省 WSL 空间</span>
+</span></span><span style=display:flex><span>sudo apt autoremove -y <span style=color:#5bc4bf>&amp;&amp;</span> sudo apt clean</span></span></code></pre></div><h2 id=安装脚本>安装脚本<a class=anchor href=#%e5%ae%89%e8%a3%85%e8%84%9a%e6%9c%ac>#</a></h2><blockquote class=book-hint><p>安装 lazygit</p></blockquote><div class=highlight><pre tabindex=0 style=color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8d8687>#!/bin/bash</span>
+</span></span><span style=display:flex><span><span style=color:#8d8687># set -e</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#815ba4>$(</span>uname -m<span style=color:#815ba4>)</span>
+</span></span><span style=display:flex><span><span style=color:#815ba4>case</span> <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span> in
+</span></span><span style=display:flex><span>    x86_64<span style=color:#5bc4bf>)</span>         <span style=color:#ef6155>BIN_ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;x86_64&#34;</span> ;;
+</span></span><span style=display:flex><span>    aarch64|arm64<span style=color:#5bc4bf>)</span>  <span style=color:#ef6155>BIN_ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;arm64&#34;</span> ;;
+</span></span><span style=display:flex><span>    *<span style=color:#5bc4bf>)</span> echo <span style=color:#48b685>&#34;❌ 架构不支持: </span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span>; exit <span style=color:#f99b15>1</span> ;;
+</span></span><span style=display:flex><span><span style=color:#815ba4>esac</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;🔍 正在搜索最新版 Lazygit...&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>URL_LATEST</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;https://github.com/jesseduffield/lazygit/releases/latest&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>REAL_URL</span><span style=color:#5bc4bf>=</span><span style=color:#815ba4>$(</span>curl -Ls -o /dev/null -w %<span style=color:#5bc4bf>{</span>url_effective<span style=color:#5bc4bf>}</span> <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$URL_LATEST</span><span style=color:#48b685>&#34;</span><span style=color:#815ba4>)</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>TAG</span><span style=color:#5bc4bf>=</span><span style=color:#815ba4>$(</span>basename <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$REAL_URL</span><span style=color:#48b685>&#34;</span><span style=color:#815ba4>)</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>VERSION</span><span style=color:#5bc4bf>=</span><span style=color:#f99b15>${</span><span style=color:#ef6155>TAG</span>#v<span style=color:#f99b15>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>FILE</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;lazygit_</span><span style=color:#f99b15>${</span><span style=color:#ef6155>VERSION</span><span style=color:#f99b15>}</span><span style=color:#48b685>_Linux_</span><span style=color:#f99b15>${</span><span style=color:#ef6155>BIN_ARCH</span><span style=color:#f99b15>}</span><span style=color:#48b685>.tar.gz&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>URL</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;https://github.com/jesseduffield/lazygit/releases/download/</span><span style=color:#f99b15>${</span><span style=color:#ef6155>TAG</span><span style=color:#f99b15>}</span><span style=color:#48b685>/</span><span style=color:#f99b15>${</span><span style=color:#ef6155>FILE</span><span style=color:#f99b15>}</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📥 正在下载 </span><span style=color:#ef6155>$FILE</span><span style=color:#48b685> 到当前目录...&#34;</span>
+</span></span><span style=display:flex><span>curl -L -O <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$URL</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📦 正在安装...&#34;</span>
+</span></span><span style=display:flex><span>tar -xzf <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span> lazygit
+</span></span><span style=display:flex><span>sudo install -m <span style=color:#f99b15>755</span> lazygit /usr/local/bin/lazygit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>rm -f <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span> lazygit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;✅ lazygit 安装完成。&#34;</span>
+</span></span><span style=display:flex><span>lazygit --version</span></span></code></pre></div><blockquote class=book-hint><p>安装btop</p></blockquote><div class=highlight><pre tabindex=0 style=color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#8d8687>#!/bin/bash
+</span></span></span><span style=display:flex><span>set -e
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#815ba4>$(</span>uname -m<span style=color:#815ba4>)</span>
+</span></span><span style=display:flex><span><span style=color:#815ba4>case</span> <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span> in
+</span></span><span style=display:flex><span>    x86_64<span style=color:#5bc4bf>)</span>         <span style=color:#ef6155>FILE</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;btop-x86_64-unknown-linux-musl.tbz&#34;</span> ;;
+</span></span><span style=display:flex><span>    aarch64|arm64<span style=color:#5bc4bf>)</span>  <span style=color:#ef6155>FILE</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;btop-aarch64-unknown-linux-musl.tbz&#34;</span> ;;
+</span></span><span style=display:flex><span>    *<span style=color:#5bc4bf>)</span> echo <span style=color:#48b685>&#34;❌ 架构不支持: </span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span>; exit <span style=color:#f99b15>1</span> ;;
+</span></span><span style=display:flex><span><span style=color:#815ba4>esac</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>URL</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;https://github.com/aristocratos/btop/releases/latest/download/</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📥 正在下载 </span><span style=color:#ef6155>$FILE</span><span style=color:#48b685> 到当前目录...&#34;</span>
+</span></span><span style=display:flex><span>curl -L -O <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$URL</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📦 正在安装并自动清理...&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>tar -xjf <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo install -m <span style=color:#f99b15>755</span> btop/bin/btop /usr/local/bin/btop
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>rm -rf <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span> btop
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;✅ btop 安装成功。&#34;</span>
+</span></span><span style=display:flex><span>btop --version</span></span></code></pre></div><blockquote class=book-hint><p>安装eza</p></blockquote><div class=highlight><pre tabindex=0 style=color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#8d8687>#!/bin/bash
+</span></span></span><span style=display:flex><span>set -e
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#815ba4>$(</span>uname -m<span style=color:#815ba4>)</span>
+</span></span><span style=display:flex><span><span style=color:#815ba4>case</span> <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span> in
+</span></span><span style=display:flex><span>    x86_64<span style=color:#5bc4bf>)</span>         <span style=color:#ef6155>FILE</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;eza_x86_64-unknown-linux-gnu.tar.gz&#34;</span> ;;
+</span></span><span style=display:flex><span>    aarch64|arm64<span style=color:#5bc4bf>)</span>  <span style=color:#ef6155>FILE</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;eza_aarch64-unknown-linux-gnu.tar.gz&#34;</span> ;;
+</span></span><span style=display:flex><span>    *<span style=color:#5bc4bf>)</span> echo <span style=color:#48b685>&#34;❌ 架构不支持: </span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span>; exit <span style=color:#f99b15>1</span> ;;
+</span></span><span style=display:flex><span><span style=color:#815ba4>esac</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>URL</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;https://github.com/eza-community/eza/releases/latest/download/</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📥 正在下载 </span><span style=color:#ef6155>$FILE</span><span style=color:#48b685> 到当前目录...&#34;</span>
+</span></span><span style=display:flex><span>curl -L -O <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$URL</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📦 正在解压并安装...&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>tar -xzf <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo install -m <span style=color:#f99b15>755</span> eza /usr/local/bin/eza
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>rm -f <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span> eza
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;✅ eza 安装完成。&#34;</span>
+</span></span><span style=display:flex><span>eza --version</span></span></code></pre></div><blockquote class=book-hint><p>安装neovim</p></blockquote><div class=highlight><pre tabindex=0 style=color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#8d8687>#!/bin/bash
+</span></span></span><span style=display:flex><span>set -e
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#815ba4>$(</span>uname -m<span style=color:#815ba4>)</span>
+</span></span><span style=display:flex><span><span style=color:#815ba4>case</span> <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span> in
+</span></span><span style=display:flex><span>    x86_64<span style=color:#5bc4bf>)</span>          <span style=color:#ef6155>BIN_ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;x86_64&#34;</span> ;;
+</span></span><span style=display:flex><span>    aarch64|arm64<span style=color:#5bc4bf>)</span>   <span style=color:#ef6155>BIN_ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;arm64&#34;</span> ;;
+</span></span><span style=display:flex><span>    *<span style=color:#5bc4bf>)</span> echo <span style=color:#48b685>&#34;❌ 架构不支持: </span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span>; exit <span style=color:#f99b15>1</span> ;;
+</span></span><span style=display:flex><span><span style=color:#815ba4>esac</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>FILE</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;nvim-linux-</span><span style=color:#f99b15>${</span><span style=color:#ef6155>BIN_ARCH</span><span style=color:#f99b15>}</span><span style=color:#48b685>.tar.gz&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>DIR_NAME</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;nvim-linux-</span><span style=color:#f99b15>${</span><span style=color:#ef6155>BIN_ARCH</span><span style=color:#f99b15>}</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>URL</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;https://github.com/neovim/neovim/releases/latest/download/</span><span style=color:#f99b15>${</span><span style=color:#ef6155>FILE</span><span style=color:#f99b15>}</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;🔍 正在从官方获取 </span><span style=color:#ef6155>$BIN_ARCH</span><span style=color:#48b685> 版 Neovim...&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>curl -LO <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$URL</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📦 正在安装至 /opt...&#34;</span>
+</span></span><span style=display:flex><span>sudo rm -rf <span style=color:#48b685>&#34;/opt/</span><span style=color:#ef6155>$DIR_NAME</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>sudo tar -C /opt -xzf <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>rm -f <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;------------------------------------------&#34;</span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;✅ Neovim 已成功解压到 /opt/</span><span style=color:#ef6155>$DIR_NAME</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#815ba4>if</span> <span style=color:#5bc4bf>[[</span> <span style=color:#48b685>&#34;:</span><span style=color:#ef6155>$PATH</span><span style=color:#48b685>:&#34;</span> <span style=color:#5bc4bf>==</span> *<span style=color:#48b685>&#34;:/opt/</span><span style=color:#ef6155>$DIR_NAME</span><span style=color:#48b685>/bin:&#34;</span>* <span style=color:#5bc4bf>]]</span>; <span style=color:#815ba4>then</span>
+</span></span><span style=display:flex><span>    echo <span style=color:#48b685>&#34;🚀 PATH 已经配置好了。&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#815ba4>else</span>
+</span></span><span style=display:flex><span>    echo <span style=color:#48b685>&#34;⚠️  请手动将以下行添加到您的 ~/.bashrc 或 ~/.zshrc 中：&#34;</span>
+</span></span><span style=display:flex><span>    echo <span style=color:#48b685>&#34;   export PATH=\&#34;\$PATH:/opt/</span><span style=color:#ef6155>$DIR_NAME</span><span style=color:#48b685>/bin\&#34;&#34;</span>
+</span></span><span style=display:flex><span>    echo <span style=color:#48b685>&#34;   然后执行: source ~/.bashrc (或 source ~/.zshrc)&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#815ba4>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;------------------------------------------&#34;</span>
+</span></span><span style=display:flex><span>/opt/<span style=color:#ef6155>$DIR_NAME</span>/bin/nvim --version | head -n <span style=color:#f99b15>1</span></span></span></code></pre></div><blockquote class=book-hint><p>安装tmux</p></blockquote><div class=highlight><pre tabindex=0 style=color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#8d8687>#!/bin/bash
+</span></span></span><span style=display:flex><span>set -e
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#815ba4>$(</span>uname -m<span style=color:#815ba4>)</span>
+</span></span><span style=display:flex><span><span style=color:#815ba4>case</span> <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span> in
+</span></span><span style=display:flex><span>    x86_64<span style=color:#5bc4bf>)</span>         <span style=color:#ef6155>BIN_ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;x86_64&#34;</span> ;;
+</span></span><span style=display:flex><span>    aarch64|arm64<span style=color:#5bc4bf>)</span>  <span style=color:#ef6155>BIN_ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;arm64&#34;</span> ;;
+</span></span><span style=display:flex><span>    *<span style=color:#5bc4bf>)</span> echo <span style=color:#48b685>&#34;❌ 架构不支持: </span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span>; exit <span style=color:#f99b15>1</span> ;;
+</span></span><span style=display:flex><span><span style=color:#815ba4>esac</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;🔍 正在搜索最新版 Tmux...&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>URL_LATEST</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;https://github.com/tmux/tmux-builds/releases/latest&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>REAL_URL</span><span style=color:#5bc4bf>=</span><span style=color:#815ba4>$(</span>curl -Ls -o /dev/null -w %<span style=color:#5bc4bf>{</span>url_effective<span style=color:#5bc4bf>}</span> <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$URL_LATEST</span><span style=color:#48b685>&#34;</span><span style=color:#815ba4>)</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>TAG</span><span style=color:#5bc4bf>=</span><span style=color:#815ba4>$(</span>basename <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$REAL_URL</span><span style=color:#48b685>&#34;</span><span style=color:#815ba4>)</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>VERSION</span><span style=color:#5bc4bf>=</span><span style=color:#f99b15>${</span><span style=color:#ef6155>TAG</span>#v<span style=color:#f99b15>}</span> 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>FILE</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;tmux-</span><span style=color:#f99b15>${</span><span style=color:#ef6155>VERSION</span><span style=color:#f99b15>}</span><span style=color:#48b685>-linux-</span><span style=color:#f99b15>${</span><span style=color:#ef6155>BIN_ARCH</span><span style=color:#f99b15>}</span><span style=color:#48b685>.tar.gz&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>URL</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;https://github.com/tmux/tmux-builds/releases/download/</span><span style=color:#f99b15>${</span><span style=color:#ef6155>TAG</span><span style=color:#f99b15>}</span><span style=color:#48b685>/</span><span style=color:#f99b15>${</span><span style=color:#ef6155>FILE</span><span style=color:#f99b15>}</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📥 正在下载 </span><span style=color:#ef6155>$FILE</span><span style=color:#48b685> 到当前目录...&#34;</span>
+</span></span><span style=display:flex><span>curl -L -O <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$URL</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📦 正在安装并自动清理...&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>tar -xzf <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span> tmux
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo install -m <span style=color:#f99b15>755</span> tmux /usr/local/bin/tmux
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>rm -f <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span> tmux
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;✅ tmux 安装完成。&#34;</span>
+</span></span><span style=display:flex><span>tmux -V</span></span></code></pre></div><blockquote class=book-hint><p>安装yazi</p></blockquote><div class=highlight><pre tabindex=0 style=color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#8d8687>#!/bin/bash
+</span></span></span><span style=display:flex><span>set -e
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>ARCH</span><span style=color:#5bc4bf>=</span><span style=color:#815ba4>$(</span>uname -m<span style=color:#815ba4>)</span>
+</span></span><span style=display:flex><span><span style=color:#815ba4>case</span> <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$ARCH</span><span style=color:#48b685>&#34;</span> in
+</span></span><span style=display:flex><span>    x86_64<span style=color:#5bc4bf>)</span>         <span style=color:#ef6155>FILE</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;yazi-x86_64-unknown-linux-gnu.deb&#34;</span> ;;
+</span></span><span style=display:flex><span>    aarch64|arm64<span style=color:#5bc4bf>)</span>  <span style=color:#ef6155>FILE</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;yazi-aarch64-unknown-linux-gnu.deb&#34;</span> ;;
+</span></span><span style=display:flex><span>    *<span style=color:#5bc4bf>)</span> echo <span style=color:#48b685>&#34;❌ 架构不支持&#34;</span>; exit <span style=color:#f99b15>1</span> ;;
+</span></span><span style=display:flex><span><span style=color:#815ba4>esac</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ef6155>URL</span><span style=color:#5bc4bf>=</span><span style=color:#48b685>&#34;https://github.com/sxyazi/yazi/releases/latest/download/</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📥 正在下载 </span><span style=color:#ef6155>$FILE</span><span style=color:#48b685> 到当前目录...&#34;</span>
+</span></span><span style=display:flex><span>curl -L -O <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$URL</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;📦 正在安装并自动清理本地包...&#34;</span>
+</span></span><span style=display:flex><span>sudo apt install -y <span style=color:#48b685>&#34;./</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span> <span style=color:#5bc4bf>&amp;&amp;</span> rm <span style=color:#48b685>&#34;</span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#48b685>&#34;✅ 安装成功，已自动清除 </span><span style=color:#ef6155>$FILE</span><span style=color:#48b685>。&#34;</span>
+</span></span><span style=display:flex><span>yazi --version</span></span></code></pre></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/hugonote/docs/cli/winget/ class="flex align-center"><img src=/hugonote/icons/backward.svg class=book-icon alt=Backward>
+<span>Winget</span>
+</a></span><span><a href=/hugonote/docs/cli/yazi/ class="flex align-center"><span>Yazi</span>
+<img src=/hugonote/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#安装wsl>安装wsl</a></li><li><a href=#禁用-wsl-的-windowspath-互操作性>禁用 WSL 的 Windows<code>$PATH</code> 互操作性</a></li><li><a href=#进入wsl>进入wsl</a></li><li><a href=#安装脚本>安装脚本</a></li></ul></nav></div></aside></main></body></html>

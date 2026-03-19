@@ -18,7 +18,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco upgrade xxx
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 卸载 xxx 软件&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco uninstall xxx&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</guid><description>&lt;h1 id="lazydocker"&gt;lazydocker&lt;a class="anchor" href="#lazydocker"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco uninstall xxx&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/git/</guid><description>&lt;h1 id="git"&gt;Git&lt;a class="anchor" href="#git"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="ssh-key"&gt;ssh key&lt;a class="anchor" href="#ssh-key"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh-keygen -t ed25519 -C &lt;span style="color:#48b685"&gt;&amp;#34;1@email.com&amp;#34;&lt;/span&gt; -f ~/.ssh/1 &lt;span style="color:#8d8687"&gt;# 生成名为 &amp;#34;1&amp;#34; 的 Ed25519 密钥对，并保存在 ~/.ssh/ 目录下&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat ~/.ssh/1.pub &lt;span style="color:#8d8687"&gt;# 查看并复制公钥 &amp;#34;1&amp;#34; 的内容&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh -T git@1.github.com&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</guid><description>&lt;h1 id="lazydocker"&gt;lazydocker&lt;a class="anchor" href="#lazydocker"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;更轻松的 Docker 管理方式&lt;/p&gt;
 &lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
@@ -28,7 +34,8 @@
 &lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/jesseduffield/lazygit"&gt;lazygit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/scoop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/scoop/</guid><description>&lt;h2 id="scoop"&gt;Scoop&lt;a class="anchor" href="#scoop"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;/ul&gt;
+&lt;h2 id="wsl使用"&gt;wsl使用&lt;a class="anchor" href="#wsl%e4%bd%bf%e7%94%a8"&gt;#&lt;/a&gt;&lt;/h2&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/scoop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/scoop/</guid><description>&lt;h2 id="scoop"&gt;Scoop&lt;a class="anchor" href="#scoop"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;适用于 Windows 的命令行安装程序&lt;/p&gt;
 &lt;h2 id="参考"&gt;参考&lt;a class="anchor" href="#%e5%8f%82%e8%80%83"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://scoop.sh/"&gt;https://scoop.sh/&lt;/a&gt;&lt;/p&gt;
@@ -106,7 +113,7 @@
 &lt;blockquote class='book-hint '&gt;
 &lt;p&gt;安装&lt;/p&gt;
 &lt;/blockquote&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop install wezterm
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;reg import &lt;span style="color:#48b685"&gt;&amp;#34;C:\Users\toppine\scoop\apps\wezterm\current\install-context.reg&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;reg import &lt;span style="color:#48b685"&gt;&amp;#34;C:\Users\xxx\scoop\apps\wezterm\current\install-context.reg&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 终端启动&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wezterm-gui&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote class='book-hint '&gt;
@@ -248,7 +255,38 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget export -o &amp;lt;OutputPath&amp;gt; --include-versions
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 加上 --ignore-unavailable 跳过无法安装的部分，避免阻塞整个流程&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget import -i &amp;lt;JsonPath&amp;gt; --ignore-versions --ignore-unavailable&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/yazi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/yazi/</guid><description>&lt;h1 id="yazi"&gt;Yazi&lt;a class="anchor" href="#yazi"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget import -i &amp;lt;JsonPath&amp;gt; --ignore-versions --ignore-unavailable&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/wsl-debian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/wsl-debian/</guid><description>&lt;h1 id="wsl-debian"&gt;Wsl debian&lt;a class="anchor" href="#wsl-debian"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;我的默认base debian&lt;/p&gt;
+&lt;h2 id="安装wsl"&gt;安装wsl&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --list --online
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 安装debian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --install -d Debian&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="禁用-wsl-的-windowspath-互操作性"&gt;禁用 WSL 的 Windows&lt;code&gt;$PATH&lt;/code&gt; 互操作性&lt;a class="anchor" href="#%e7%a6%81%e7%94%a8-wsl-%e7%9a%84-windowspath-%e4%ba%92%e6%93%8d%e4%bd%9c%e6%80%a7"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 运行以下命令以**root权限**打开文件：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vi /etc/wsl.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 输入您的 WSL 用户密码。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 单击`i`进入编辑模式（插入模式）。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 输入或修改内容：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[&lt;/span&gt;interop&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;appendWindowsPath&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt; false
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 单击`Esc`退出编辑模式。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 输入`:wq`(保存并退出)。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 修改`/etc/wsl.conf`后，您必须完全关闭并重新启动 WSL 才能更改生效。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --shutdown&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="进入wsl"&gt;进入wsl&lt;a class="anchor" href="#%e8%bf%9b%e5%85%a5wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# base&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt install -y curl wget vim git build-essential iputils-ping net-tools htop dnsutils unzip zip procps 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install git-lfs
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git lfs install
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清理安装产生的缓存，节省 WSL 空间&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt autoremove -y &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt clean&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装脚本"&gt;安装脚本&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85%e8%84%9a%e6%9c%ac"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote class='book-hint '&gt;
+&lt;p&gt;安装 lazygit&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/yazi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/yazi/</guid><description>&lt;h1 id="yazi"&gt;Yazi&lt;a class="anchor" href="#yazi"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;基于异步 I/O，用 Rust 编写的超快终端文件管理器&lt;/p&gt;
 &lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
@@ -262,7 +300,68 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install ./yazi-x86_64-unknown-linux-gnu.deb
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/%E5%8D%9A%E5%AE%A2%E5%88%97%E8%A1%A8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/%E5%8D%9A%E5%AE%A2%E5%88%97%E8%A1%A8/</guid><description>&lt;h1 id="博客列表"&gt;博客列表&lt;a class="anchor" href="#%e5%8d%9a%e5%ae%a2%e5%88%97%e8%a1%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/zsh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/zsh/</guid><description>&lt;h1 id="zsh"&gt;zsh&lt;a class="anchor" href="#zsh"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="oh-my-zsh"&gt;oh-my-zsh&lt;a class="anchor" href="#oh-my-zsh"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote class='book-hint '&gt;
+&lt;p&gt;.zshrc&lt;/p&gt;
+&lt;/blockquote&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;if&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;[[&lt;/span&gt; -r &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;XDG_CACHE_HOME&lt;/span&gt;&lt;span style="color:#815ba4"&gt;:-&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$HOME&lt;/span&gt;/.cache&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;/p10k-instant-prompt-&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;USER&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;.zsh&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;]]&lt;/span&gt;; &lt;span style="color:#815ba4"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; source &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;XDG_CACHE_HOME&lt;/span&gt;&lt;span style="color:#815ba4"&gt;:-&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$HOME&lt;/span&gt;/.cache&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;/p10k-instant-prompt-&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;USER&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;.zsh&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[[&lt;/span&gt; -f ~/.p10k.zsh &lt;span style="color:#5bc4bf"&gt;]]&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; source ~/.p10k.zsh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;export &lt;span style="color:#ef6155"&gt;ZSH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$HOME&lt;/span&gt;&lt;span style="color:#48b685"&gt;/.oh-my-zsh&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;ZSH_THEME&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;powerlevel10k/powerlevel10k&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;export &lt;span style="color:#ef6155"&gt;LANG&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;plugins&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; git 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; z 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sudo 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; extract 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; web-search 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; zsh-autosuggestions 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; zsh-syntax-highlighting 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; zsh-completions 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;source &lt;span style="color:#ef6155"&gt;$ZSH&lt;/span&gt;/oh-my-zsh.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[&lt;/span&gt; -d &lt;span style="color:#48b685"&gt;&amp;#34;/opt/nvim-linux-x86_64/bin&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; export &lt;span style="color:#ef6155"&gt;PATH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$PATH&lt;/span&gt;&lt;span style="color:#48b685"&gt;:/opt/nvim-linux-x86_64/bin&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[&lt;/span&gt; -d &lt;span style="color:#48b685"&gt;&amp;#34;/opt/nvim-linux-arm64/bin&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; export &lt;span style="color:#ef6155"&gt;PATH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$PATH&lt;/span&gt;&lt;span style="color:#48b685"&gt;:/opt/nvim-linux-arm64/bin&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;v&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;vi&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;vim&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;if&lt;/span&gt; command -v eza &amp;gt; /dev/null; &lt;span style="color:#815ba4"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;ls&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza --icons --group-directories-first&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;ll&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza -lh --icons --git --group-directories-first&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;la&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza -lah --icons --git --group-directories-first&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;tree&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza --tree --icons&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;l&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;ls -lah&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;lg&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;lazygit&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;y&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;yazi&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias ..&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;cd ..&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias ...&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;cd ../..&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias ....&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;cd ../../..&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias -- -&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;cd -&amp;#39;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;cls&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;clear&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;ip&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;ip -color=auto&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;ping&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;gping&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;vf&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;nvim $(fzf)&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zstyle &lt;span style="color:#48b685"&gt;&amp;#39;:completion:*&amp;#39;&lt;/span&gt; matcher-list &lt;span style="color:#48b685"&gt;&amp;#39;m:{a-zA-Z}={A-Za-z}&amp;#39;&lt;/span&gt; &lt;span style="color:#48b685"&gt;&amp;#39;r:|[._-]=* r:|=*&amp;#39;&lt;/span&gt; &lt;span style="color:#48b685"&gt;&amp;#39;l:|=* r:|=*&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zstyle &lt;span style="color:#48b685"&gt;&amp;#39;:completion:*&amp;#39;&lt;/span&gt; use-cache yes
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zstyle &lt;span style="color:#48b685"&gt;&amp;#39;:completion:*&amp;#39;&lt;/span&gt; cache-path &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$ZSH_CACHE_DIR&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote class='book-hint '&gt;
+&lt;p&gt;.p10k.zsh&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/%E5%8D%9A%E5%AE%A2%E5%88%97%E8%A1%A8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/%E5%8D%9A%E5%AE%A2%E5%88%97%E8%A1%A8/</guid><description>&lt;h1 id="博客列表"&gt;博客列表&lt;a class="anchor" href="#%e5%8d%9a%e5%ae%a2%e5%88%97%e8%a1%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;h2 id="参考"&gt;参考&lt;a class="anchor" href="#%e5%8f%82%e8%80%83"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/timqian/chinese-independent-blogs"&gt;中文独立博客列表&lt;/a&gt;&lt;/li&gt;
