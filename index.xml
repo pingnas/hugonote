@@ -101,7 +101,41 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmux at -t myname
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmux attach -t myname
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tmux attach-session -t myname&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote class='book-hint '&gt;
-&lt;p&gt;中止会话&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/wezterm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/wezterm/</guid><description>&lt;h1 id="wezterm"&gt;WezTerm&lt;a class="anchor" href="#wezterm"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;中止会话&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/uv/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/uv/</guid><description>&lt;h1 id="uv"&gt;uv&lt;a class="anchor" href="#uv"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;一个用 Rust 编写的、速度极快的 Python 包和项目管理器。&lt;/p&gt;
+&lt;h2 id="命令"&gt;命令&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -LsSf https://astral.sh/uv/install.sh | sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 升级&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv self update&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote class='book-hint '&gt;
+&lt;p&gt;Python 版本 &lt;a href="https://docs.astral.sh/uv/guides/install-python/#next-steps"&gt;https://docs.astral.sh/uv/guides/install-python/#next-steps&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 安装 Python 版本。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv python install
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 查看可用的 Python 版本。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv python list 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 查找已安装的 Python 版本。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv python find 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 将当前项目锁定为使用特定的 Python 版本。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv python pin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 卸载 Python 版本。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv python uninstall&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote class='book-hint '&gt;
+&lt;p&gt;Scripts &lt;a href="https://docs.astral.sh/uv/guides/scripts/"&gt;https://docs.astral.sh/uv/guides/scripts/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 执行独立的 Python 脚本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 运行脚本。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv run
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 向脚本添加依赖项。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv add --script
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 移除脚本中的依赖项。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv remove --script&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote class='book-hint '&gt;
+&lt;p&gt;项目 &lt;a href="https://docs.astral.sh/uv/guides/projects/"&gt;https://docs.astral.sh/uv/guides/projects/&lt;/a&gt;&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/wezterm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/wezterm/</guid><description>&lt;h1 id="wezterm"&gt;WezTerm&lt;a class="anchor" href="#wezterm"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;一个功能强大的跨平台终端模拟器和多路复用器&lt;/p&gt;
 &lt;h2 id="参考"&gt;参考&lt;a class="anchor" href="#%e5%8f%82%e8%80%83"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
