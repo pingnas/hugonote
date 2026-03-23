@@ -1,14 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note</title><link>https://pingnas.github.io/hugonote/docs/cli/</link><description>Recent content on Note</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://pingnas.github.io/hugonote/docs/cli/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/git/</guid><description>&lt;h1 id="git"&gt;Git&lt;a class="anchor" href="#git"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id="ssh-key"&gt;ssh key&lt;a class="anchor" href="#ssh-key"&gt;#&lt;/a&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Note</title><link>https://pingnas.github.io/hugonote/docs/cli/</link><description>Recent content on Note</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://pingnas.github.io/hugonote/docs/cli/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/debian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/debian/</guid><description>&lt;h1 id="wsl-debian"&gt;Wsl debian&lt;a class="anchor" href="#wsl-debian"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="base"&gt;base&lt;a class="anchor" href="#base"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 更新索引并安装：核心下载(curl/wget)、编辑器(vim)、代码管理(git)、编译环境(build-essential)、&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# HTTPS证书(ca-certificates)、网络诊断(ping/dig)、系统监控(htop)、JSON处理(jq)、&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 终端复用(tmux)、解压(unzip)以及Debian源管理必备(lsb-release/gnupg)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt install -y &lt;span style="color:#f99b15"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; curl wget vim git build-essential ca-certificates &lt;span style="color:#f99b15"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; iputils-ping dnsutils htop jq tmux unzip &lt;span style="color:#f99b15"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; lsb-release gnupg &lt;span style="color:#f99b15"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt autoremove -y &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt clean
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 安装完成后清理一下缓存以节省空间&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt autoremove -y &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt clean&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/git/</guid><description>&lt;h1 id="git"&gt;Git&lt;a class="anchor" href="#git"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="使用ssh-key"&gt;使用ssh key&lt;a class="anchor" href="#%e4%bd%bf%e7%94%a8ssh-key"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh-keygen -t ed25519 -C &lt;span style="color:#48b685"&gt;&amp;#34;1@email.com&amp;#34;&lt;/span&gt; -f ~/.ssh/1 &lt;span style="color:#8d8687"&gt;# 生成名为 &amp;#34;1&amp;#34; 的 Ed25519 密钥对，并保存在 ~/.ssh/ 目录下&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat ~/.ssh/1.pub &lt;span style="color:#8d8687"&gt;# 查看并复制公钥 &amp;#34;1&amp;#34; 的内容&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh -T git@1.github.com &lt;span style="color:#8d8687"&gt;# 测试连接&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</guid><description>&lt;h1 id="lazydocker"&gt;lazydocker&lt;a class="anchor" href="#lazydocker"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh -T git@1.github.com &lt;span style="color:#8d8687"&gt;# 测试连接&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装wsl"&gt;安装(wsl)&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt install -y curl wget vim git git-lfs
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git lfs install&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</guid><description>&lt;h1 id="lazydocker"&gt;lazydocker&lt;a class="anchor" href="#lazydocker"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;更轻松的 Docker 管理方式&lt;/p&gt;
 &lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/jesseduffield/lazydocker"&gt;lazydocker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/jesseduffield/lazydocker"&gt;lazydocker仓库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/jesseduffield/lazydocker/blob/master/docs/keybindings/Keybindings_zh.md"&gt;按键绑定文档&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/lazygit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/lazygit/</guid><description>&lt;h1 id="lazygit"&gt;lazygit&lt;a class="anchor" href="#lazygit"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;用于 git 命令的简单终端界面&lt;/p&gt;
 &lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -61,10 +77,50 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 打开stash 选项。&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;S&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote class='book-hint '&gt;
-&lt;p&gt;左半边Local branches 区块&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/scoop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/scoop/</guid><description>&lt;h2 id="scoop"&gt;Scoop&lt;a class="anchor" href="#scoop"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;左半边Local branches 区块&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/neovim/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/neovim/</guid><description>&lt;h1 id="neovim"&gt;neovim&lt;a class="anchor" href="#neovim"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="安装wsl"&gt;安装(wsl)&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;set -e
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;ARCH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#815ba4"&gt;$(&lt;/span&gt;uname -m&lt;span style="color:#815ba4"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;case&lt;/span&gt; &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$ARCH&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt; in
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; x86_64&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt; &lt;span style="color:#ef6155"&gt;BIN_ARCH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;x86_64&amp;#34;&lt;/span&gt; ;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; aarch64|arm64&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt; &lt;span style="color:#ef6155"&gt;BIN_ARCH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;arm64&amp;#34;&lt;/span&gt; ;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; *&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt; echo &lt;span style="color:#48b685"&gt;&amp;#34;❌ 架构不支持: &lt;/span&gt;&lt;span style="color:#ef6155"&gt;$ARCH&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;; exit &lt;span style="color:#f99b15"&gt;1&lt;/span&gt; ;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;esac&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;FILE&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim-linux-&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;BIN_ARCH&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;.tar.gz&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;DIR_NAME&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim-linux-&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;BIN_ARCH&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;URL&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;https://github.com/neovim/neovim/releases/latest/download/&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;FILE&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;🔍 正在从官方获取 &lt;/span&gt;&lt;span style="color:#ef6155"&gt;$BIN_ARCH&lt;/span&gt;&lt;span style="color:#48b685"&gt; 版 Neovim...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -LO &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$URL&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;📦 正在安装至 /opt...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo rm -rf &lt;span style="color:#48b685"&gt;&amp;#34;/opt/&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$DIR_NAME&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo tar -C /opt -xzf &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rm -f &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;------------------------------------------&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;✅ Neovim 已成功解压到 /opt/&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$DIR_NAME&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;if&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;[[&lt;/span&gt; &lt;span style="color:#48b685"&gt;&amp;#34;:&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$PATH&lt;/span&gt;&lt;span style="color:#48b685"&gt;:&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;==&lt;/span&gt; *&lt;span style="color:#48b685"&gt;&amp;#34;:/opt/&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$DIR_NAME&lt;/span&gt;&lt;span style="color:#48b685"&gt;/bin:&amp;#34;&lt;/span&gt;* &lt;span style="color:#5bc4bf"&gt;]]&lt;/span&gt;; &lt;span style="color:#815ba4"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#48b685"&gt;&amp;#34;🚀 PATH 已经配置好了。&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#48b685"&gt;&amp;#34;⚠️ 请手动将以下行添加到您的 ~/.bashrc 或 ~/.zshrc 中：&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#48b685"&gt;&amp;#34; export PATH=\&amp;#34;\$PATH:/opt/&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$DIR_NAME&lt;/span&gt;&lt;span style="color:#48b685"&gt;/bin\&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; echo &lt;span style="color:#48b685"&gt;&amp;#34; 然后执行: source ~/.bashrc (或 source ~/.zshrc)&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;------------------------------------------&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;/opt/&lt;span style="color:#ef6155"&gt;$DIR_NAME&lt;/span&gt;/bin/nvim --version | head -n &lt;span style="color:#f99b15"&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/scoop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/scoop/</guid><description>&lt;h2 id="scoop"&gt;Scoop&lt;a class="anchor" href="#scoop"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;适用于 Windows 的命令行安装程序&lt;/p&gt;
 &lt;h2 id="参考"&gt;参考&lt;a class="anchor" href="#%e5%8f%82%e8%80%83"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://scoop.sh/"&gt;https://scoop.sh/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://scoop.sh/"&gt;scoop doc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="命令"&gt;命令&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 搜索&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop search &amp;lt;app_name&amp;gt;
@@ -97,8 +153,8 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.ruanyifeng.com/blog/2019/10/tmux.html"&gt;Tmux 使用教程 阮一峰&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://wangchujiang.com/reference/docs/tmux.html"&gt;最常用的快捷键和命令的 tmux 备忘单快速参考&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/tmux/tmux"&gt;tmux&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/gpakosz/.tmux"&gt;.tmux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/tmux/tmux"&gt;tmux仓库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/gpakosz/.tmux"&gt;.tmux配置&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="命令"&gt;命令&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote class='book-hint '&gt;
@@ -161,13 +217,335 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 移除脚本中的依赖项。&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv remove --script&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote class='book-hint '&gt;
-&lt;p&gt;项目 &lt;a href="https://docs.astral.sh/uv/guides/projects/"&gt;https://docs.astral.sh/uv/guides/projects/&lt;/a&gt;&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/wezterm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/wezterm/</guid><description>&lt;h1 id="wezterm"&gt;WezTerm&lt;a class="anchor" href="#wezterm"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;项目 &lt;a href="https://docs.astral.sh/uv/guides/projects/"&gt;https://docs.astral.sh/uv/guides/projects/&lt;/a&gt;&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/windows-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/windows-terminal/</guid><description>&lt;h1 id="windows-terminal"&gt;Windows Terminal&lt;a class="anchor" href="#windows-terminal"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;微软的一款现代化、快速、高效、强大且实用的终端应用程序&lt;/p&gt;
+&lt;h2 id="参考"&gt;参考&lt;a class="anchor" href="#%e5%8f%82%e8%80%83"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/microsoft/terminal"&gt;terminal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-US&amp;amp;gl=US"&gt;Windows 终端&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/PowerShell/PowerShell"&gt;PowerShell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.5"&gt;PowerShell7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/PowerShell/PSReadLine"&gt;PSReadLine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ohmyposh.dev/"&gt;Oh My Posh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pscompletions.abgox.com/zh-CN/readme/"&gt;PSCompletions (psc)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="powershell"&gt;PowerShell&lt;a class="anchor" href="#powershell"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="oh-my-posh"&gt;Oh My Posh&lt;a class="anchor" href="#oh-my-posh"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget install JanDeDobbeleer.OhMyPosh --source winget 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 修改字体&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://ohmyposh.dev/docs/installation/fonts
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 修改配置文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://ohmyposh.dev/docs/installation/prompt
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;code &lt;span style="color:#ef6155"&gt;$PROFILE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 使用主题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://ohmyposh.dev/docs/installation/customize
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;oh-my-posh init pwsh --config &lt;span style="color:#48b685"&gt;&amp;#34;stelbent-compact.minimal&amp;#34;&lt;/span&gt; | Invoke-Expression&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="pscompletions-psc"&gt;PSCompletions (psc)&lt;a class="anchor" href="#pscompletions-psc"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;一个补全管理器，为 PowerShell 带来更出色、更简便的 Tab 补全体验。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;code &lt;span style="color:#ef6155"&gt;$PROFILE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 修改配置文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Import-Module PSCompletions&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/winget/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/winget/</guid><description>&lt;h1 id="winget"&gt;Winget&lt;a class="anchor" href="#winget"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;微软推出的基于命令行的包管理器，类似于 Chocolatey。&lt;/p&gt;
+&lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/windows/package-manager/"&gt;WinGet文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/microsoft/winget-cli"&gt;winget-cli文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://learn.microsoft.com/zh-cn/windows/package-manager/winget/#commands"&gt;WinGet命令&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="命令"&gt;命令&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget search &amp;lt;packageName&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget install &amp;lt;Package ID&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget uninstall &amp;lt;Package ID&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget upgrade &amp;lt;Package ID&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 升级到特定的版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget upgrade &amp;lt;Package ID&amp;gt; -v &amp;lt;version&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 升级所有应用&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget upgrade --all 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 将本机安装的 Package 导出成 json 文件，加上 --include-versions 表示导出时需要包括版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget export -o &amp;lt;OutputPath&amp;gt; --include-versions
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 加上 --ignore-unavailable 跳过无法安装的部分，避免阻塞整个流程&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget import -i &amp;lt;JsonPath&amp;gt; --ignore-versions --ignore-unavailable&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/wsl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/wsl/</guid><description>&lt;h1 id="wsl"&gt;wsl&lt;a class="anchor" href="#wsl"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="命令"&gt;命令&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --list --online
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 安装debian&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --install -d Debian&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="导出"&gt;导出&lt;a class="anchor" href="#%e5%af%bc%e5%87%ba"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 体积小&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --export aaa D:&lt;span style="color:#f99b15"&gt;\l&lt;/span&gt;inux&lt;span style="color:#f99b15"&gt;\a&lt;/span&gt;aa.tar.gz --format tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 体积大&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --export aaa e:&lt;span style="color:#f99b15"&gt;\a&lt;/span&gt;aa.tar&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="添加-wslconf-条目以控制-windows-互操作行为-gh-1493"&gt;&lt;a href="https://learn.microsoft.com/en-us/windows/wsl/release-notes#build-17713"&gt;添加 wsl.conf 条目以控制 Windows 互操作行为 [GH 1493]&lt;/a&gt;&lt;a class="anchor" href="#%e6%b7%bb%e5%8a%a0-wslconf-%e6%9d%a1%e7%9b%ae%e4%bb%a5%e6%8e%a7%e5%88%b6-windows-%e4%ba%92%e6%93%8d%e4%bd%9c%e8%a1%8c%e4%b8%ba-gh-1493"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 运行以下命令以**root权限**打开文件：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vi /etc/wsl.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 输入您的 WSL 用户密码。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 单击`i`进入编辑模式（插入模式）。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 输入或修改内容：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[&lt;/span&gt;interop&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;appendWindowsPath&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt; false
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 单击`Esc`退出编辑模式。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 输入`:wq`(保存并退出)。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 修改`/etc/wsl.conf`后，您必须完全关闭并重新启动 WSL 才能更改生效。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --shutdown&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="win转发netsh命令"&gt;win转发netsh命令&lt;a class="anchor" href="#win%e8%bd%ac%e5%8f%91netsh%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;需要管理员运行，必须蓝色的那个powershell&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清空所有规则&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;netsh interface portproxy reset
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 删除特定的一条规则&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;netsh interface portproxy delete v4tov4 &lt;span style="color:#ef6155"&gt;listenport&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=[&lt;/span&gt;端口号&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#ef6155"&gt;listenaddress&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=[&lt;/span&gt;监听地址&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# netsh interface portproxy delete v4tov4 listenport=8080 listenaddress=0.0.0.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 查询&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;netsh interface portproxy show all
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 在Windows中设置转发&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;netsh interface portproxy add v4tov4 &lt;span style="color:#ef6155"&gt;listenport&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=[&lt;/span&gt;外部访问端口&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#ef6155"&gt;listenaddress&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;0.0.0.0 &lt;span style="color:#ef6155"&gt;connectport&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=[&lt;/span&gt;WSL内部端口&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#ef6155"&gt;connectaddress&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=[&lt;/span&gt;WSL内部IP&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=172.20.10.5 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# netsh interface portproxy add v4tov4 listenport=8317 listenaddress=0.0.0.0 connectport=8317 connectaddress=172.19.187.220&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="获取-wsl-虚拟机自己的内部-ip-地址"&gt;获取 WSL 虚拟机自己的内部 IP 地址&lt;a class="anchor" href="#%e8%8e%b7%e5%8f%96-wsl-%e8%99%9a%e6%8b%9f%e6%9c%ba%e8%87%aa%e5%b7%b1%e7%9a%84%e5%86%85%e9%83%a8-ip-%e5%9c%b0%e5%9d%80"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hostname -I | awk &lt;span style="color:#48b685"&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 172.19.187.220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hostname -I&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="使用-tar-进行迁移文件夹"&gt;使用 tar 进行迁移文件夹&lt;a class="anchor" href="#%e4%bd%bf%e7%94%a8-tar-%e8%bf%9b%e8%a1%8c%e8%bf%81%e7%a7%bb%e6%96%87%e4%bb%b6%e5%a4%b9"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 在发行版 A 中&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar -cvzf my_files.tar.gz /path/to/your/folder
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 假设你在发行版 B&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar -xvzf my_files.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 快速清理现有的 .Identifier 文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;find . -name &lt;span style="color:#48b685"&gt;&amp;#34;*:Zone.Identifier&amp;#34;&lt;/span&gt; -type f -delete
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 或者如果文件名直接显示为 .Identifier&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;find . -name &lt;span style="color:#48b685"&gt;&amp;#34;*.Identifier&amp;#34;&lt;/span&gt; -type f -delete
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rm -rf 文件夹名
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rm 文件名.txt&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/zsh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/zsh/</guid><description>&lt;h1 id="zsh"&gt;zsh&lt;a class="anchor" href="#zsh"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="oh-my-zsh"&gt;oh-my-zsh&lt;a class="anchor" href="#oh-my-zsh"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote class='book-hint '&gt;
+&lt;p&gt;.zshrc&lt;/p&gt;
+&lt;/blockquote&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;if&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;[[&lt;/span&gt; -r &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;XDG_CACHE_HOME&lt;/span&gt;&lt;span style="color:#815ba4"&gt;:-&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$HOME&lt;/span&gt;/.cache&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;/p10k-instant-prompt-&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;USER&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;.zsh&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;]]&lt;/span&gt;; &lt;span style="color:#815ba4"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; source &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;XDG_CACHE_HOME&lt;/span&gt;&lt;span style="color:#815ba4"&gt;:-&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$HOME&lt;/span&gt;/.cache&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;/p10k-instant-prompt-&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;USER&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;.zsh&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[[&lt;/span&gt; -f ~/.p10k.zsh &lt;span style="color:#5bc4bf"&gt;]]&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; source ~/.p10k.zsh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;export &lt;span style="color:#ef6155"&gt;ZSH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$HOME&lt;/span&gt;&lt;span style="color:#48b685"&gt;/.oh-my-zsh&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;ZSH_THEME&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;powerlevel10k/powerlevel10k&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;export &lt;span style="color:#ef6155"&gt;LANG&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;plugins&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; git 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; z 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sudo 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; extract 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; web-search 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; zsh-autosuggestions 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; zsh-syntax-highlighting 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; zsh-completions 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;source &lt;span style="color:#ef6155"&gt;$ZSH&lt;/span&gt;/oh-my-zsh.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[&lt;/span&gt; -d &lt;span style="color:#48b685"&gt;&amp;#34;/opt/nvim-linux-x86_64/bin&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; export &lt;span style="color:#ef6155"&gt;PATH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$PATH&lt;/span&gt;&lt;span style="color:#48b685"&gt;:/opt/nvim-linux-x86_64/bin&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[&lt;/span&gt; -d &lt;span style="color:#48b685"&gt;&amp;#34;/opt/nvim-linux-arm64/bin&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; export &lt;span style="color:#ef6155"&gt;PATH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$PATH&lt;/span&gt;&lt;span style="color:#48b685"&gt;:/opt/nvim-linux-arm64/bin&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;v&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;vi&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;vim&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;if&lt;/span&gt; command -v eza &amp;gt; /dev/null; &lt;span style="color:#815ba4"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;ls&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza --icons --group-directories-first&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;ll&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza -lh --icons --git --group-directories-first&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;la&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza -lah --icons --git --group-directories-first&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;tree&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza --tree --icons&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;l&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;ls -lah&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;lg&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;lazygit&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;y&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;yazi&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias ..&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;cd ..&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias ...&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;cd ../..&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias ....&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;cd ../../..&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias -- -&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;cd -&amp;#39;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;cls&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;clear&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;ip&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;ip -color=auto&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;ping&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;gping&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;vf&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;nvim $(fzf)&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zstyle &lt;span style="color:#48b685"&gt;&amp;#39;:completion:*&amp;#39;&lt;/span&gt; matcher-list &lt;span style="color:#48b685"&gt;&amp;#39;m:{a-zA-Z}={A-Za-z}&amp;#39;&lt;/span&gt; &lt;span style="color:#48b685"&gt;&amp;#39;r:|[._-]=* r:|=*&amp;#39;&lt;/span&gt; &lt;span style="color:#48b685"&gt;&amp;#39;l:|=* r:|=*&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zstyle &lt;span style="color:#48b685"&gt;&amp;#39;:completion:*&amp;#39;&lt;/span&gt; use-cache yes
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zstyle &lt;span style="color:#48b685"&gt;&amp;#39;:completion:*&amp;#39;&lt;/span&gt; cache-path &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$ZSH_CACHE_DIR&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote class='book-hint '&gt;
+&lt;p&gt;.p10k.zsh&lt;/p&gt;</description></item><item><title>btop 资源监视器</title><link>https://pingnas.github.io/hugonote/docs/cli/btop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/btop/</guid><description>&lt;h1 id="btop"&gt;btop&lt;a class="anchor" href="#btop"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;资源监视器，显示处理器、内存、磁盘、网络和进程的使用情况和统计​​信息。&lt;/p&gt;
+&lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/aristocratos/btop"&gt;btop&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="安装wsl"&gt;安装(wsl)&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;set -e
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;ARCH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#815ba4"&gt;$(&lt;/span&gt;uname -m&lt;span style="color:#815ba4"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;case&lt;/span&gt; &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$ARCH&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt; in
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; x86_64&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt; &lt;span style="color:#ef6155"&gt;FILE&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;btop-x86_64-unknown-linux-musl.tbz&amp;#34;&lt;/span&gt; ;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; aarch64|arm64&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt; &lt;span style="color:#ef6155"&gt;FILE&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;btop-aarch64-unknown-linux-musl.tbz&amp;#34;&lt;/span&gt; ;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; *&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt; echo &lt;span style="color:#48b685"&gt;&amp;#34;❌ 架构不支持: &lt;/span&gt;&lt;span style="color:#ef6155"&gt;$ARCH&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;; exit &lt;span style="color:#f99b15"&gt;1&lt;/span&gt; ;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;esac&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;URL&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;https://github.com/aristocratos/btop/releases/latest/download/&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;📥 正在下载 &lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt; 到当前目录...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -L -O &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$URL&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;📦 正在安装并自动清理...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar -xjf &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo install -m &lt;span style="color:#f99b15"&gt;755&lt;/span&gt; btop/bin/btop /usr/local/bin/btop
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rm -rf &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt; btop
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;✅ btop 安装成功。&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;btop --version&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>clean-dev-dirs 清理开发目录</title><link>https://pingnas.github.io/hugonote/docs/cli/clean-dev-dirs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/clean-dev-dirs/</guid><description>&lt;h1 id="clean-dev-dirs"&gt;clean-dev-dirs&lt;a class="anchor" href="#clean-dev-dirs"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;一款快速高效的命令行工具，可递归清理 16 种语言生态系统中的开发构建目录，从而回收磁盘空间。支持 Rust、Node.js、Python、Go、Java/Kotlin、C/C++、Swift、.NET/C#、Ruby、Elixir、Deno、PHP、Haskell、Dart/Flutter、Zig 和 Scala。&lt;/p&gt;
+&lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/clean-dev-dirs/clean-dev-dirs"&gt;clean-dev-dirs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="命令"&gt;命令&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清理当前目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 手动选择要清理的项目 --interactive&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清理指定目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs ~/Projects
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清理多个目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs ~/Projects ~/work/client
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Rust projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs --project-type rust
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# or use short flag&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p rust
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Node.js projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p node
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Python projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p python
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Go projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p go
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Java/Kotlin projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p java
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only C/C++ projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p cpp
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Swift projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p swift
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only .NET/C# projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p dotnet
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Ruby projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p ruby
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Elixir projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p elixir
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Deno projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p deno
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only PHP projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p php
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Haskell projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p haskell
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Dart/Flutter projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p dart
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Zig projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p zig
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Scala projects&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p scala
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean all project types (default)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p all&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>eza ls的现代替代方案</title><link>https://pingnas.github.io/hugonote/docs/cli/eza/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/eza/</guid><description>&lt;h1 id="eza"&gt;eza&lt;a class="anchor" href="#eza"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;ls 的现代替代方案&lt;/p&gt;
+&lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/eza-community/eza"&gt;eza&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="使用"&gt;使用&lt;a class="anchor" href="#%e4%bd%bf%e7%94%a8"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="显示选项"&gt;显示选项&lt;a class="anchor" href="#%e6%98%be%e7%a4%ba%e9%80%89%e9%a1%b9"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;-1&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;oneline&lt;/strong&gt;: 每行显示一个条目&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-G&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;grid&lt;/strong&gt;: 以网格形式显示条目（默认）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-l&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;long&lt;/strong&gt;: 显示扩展详细信息和属性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-R&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;recurse&lt;/strong&gt;: 递归到目录&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-T&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;tree&lt;/strong&gt;: 以树状结构递归遍历目录。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-x&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;across&lt;/strong&gt;: 横向排序，而不是纵向排序&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-F&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;classify=(when)&lt;/strong&gt;: 按文件名显示类型指示器 (always, auto, never)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;colo[u]r=(when)&lt;/strong&gt;: 何时使用终端颜色 (always, auto, never)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;colo[u]r-scale=(field)&lt;/strong&gt;: 高亮显示&lt;code&gt;field&lt;/code&gt; distinctly(all, age, size)的各个级别&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;color-scale-mode=(mode)&lt;/strong&gt;: 在 &amp;ndash;color-scale 中使用渐变色或固定颜色。有效选项为 &lt;code&gt;fixed&lt;/code&gt; or &lt;code&gt;gradient&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;icons=(when)&lt;/strong&gt;: 何时显示图标 (always, auto, never)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;hyperlink&lt;/strong&gt;: 将条目显示为超链接&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;absolute=(mode)&lt;/strong&gt;: 显示条目的绝对路径 (on, follow, off)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-w&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;width=(columns)&lt;/strong&gt;: 以列为单位设置屏幕宽度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="筛选选项"&gt;筛选选项&lt;a class="anchor" href="#%e7%ad%9b%e9%80%89%e9%80%89%e9%a1%b9"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;-a&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;all&lt;/strong&gt;: 显示隐藏文件和“点”文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-d&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;treat-dirs-as-files&lt;/strong&gt;: 像列出普通文件一样列出目录&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-L&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;level=(depth)&lt;/strong&gt;: 限制递归深度&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-r&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;reverse&lt;/strong&gt;: 反转排序顺序&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-s&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;sort=(field)&lt;/strong&gt;: 按哪个字段排序&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;group-directories-first&lt;/strong&gt;: 优先列出目录，然后再列出其他文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;group-directories-last&lt;/strong&gt;: 列出其他文件之后的目录&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-D&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;only-dirs&lt;/strong&gt;: 仅列出目录&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-f&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;only-files&lt;/strong&gt;: 仅列出文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;no-symlinks&lt;/strong&gt;: 不显示符号链接&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;show-symlinks&lt;/strong&gt;: 显式显示链接 (使用 &lt;code&gt;--only-dirs&lt;/code&gt;, &lt;code&gt;--only-files&lt;/code&gt;, 表示显示与过滤器匹配的符号链接)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;git-ignore&lt;/strong&gt;: 忽略在以下位置提到的文件 &lt;code&gt;.gitignore&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-I&lt;/strong&gt;, &lt;strong&gt;&amp;ndash;ignore-glob=(globs)&lt;/strong&gt;: 要忽略的文件的 glob 模式（以管道符分隔）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;传递该 &lt;code&gt;--all&lt;/code&gt; 选项两次以同时显示 &lt;code&gt;.&lt;/code&gt; 和 &lt;code&gt;..&lt;/code&gt; 目录.&lt;/p&gt;</description></item><item><title>WezTerm 跨平台终端模拟器</title><link>https://pingnas.github.io/hugonote/docs/cli/wezterm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/wezterm/</guid><description>&lt;h1 id="wezterm"&gt;WezTerm&lt;a class="anchor" href="#wezterm"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;一个功能强大的跨平台终端模拟器和多路复用器&lt;/p&gt;
 &lt;h2 id="参考"&gt;参考&lt;a class="anchor" href="#%e5%8f%82%e8%80%83"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://wezterm.org/"&gt;docs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/wezterm/wezterm"&gt;wezterm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/KevinSilvester/wezterm-config"&gt;wezterm-config&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wezterm.org/"&gt;wezterm docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/wezterm/wezterm"&gt;wezterm仓库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/KevinSilvester/wezterm-config"&gt;wezterm-config配置&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="win使用"&gt;win使用&lt;a class="anchor" href="#win%e4%bd%bf%e7%94%a8"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote class='book-hint '&gt;
@@ -255,282 +633,31 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 循环切换 下一个 / 上一个背景&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Alt+,
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Alt+.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/windows-terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/windows-terminal/</guid><description>&lt;h1 id="windows-terminal"&gt;Windows Terminal&lt;a class="anchor" href="#windows-terminal"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;微软的一款现代化、快速、高效、强大且实用的终端应用程序&lt;/p&gt;
-&lt;h2 id="参考"&gt;参考&lt;a class="anchor" href="#%e5%8f%82%e8%80%83"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/microsoft/terminal"&gt;terminal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-US&amp;amp;gl=US"&gt;Windows 终端&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/PowerShell/PowerShell"&gt;PowerShell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.5"&gt;PowerShell7&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/PowerShell/PSReadLine"&gt;PSReadLine&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ohmyposh.dev/"&gt;Oh My Posh&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://pscompletions.abgox.com/zh-CN/readme/"&gt;PSCompletions (psc)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="powershell"&gt;PowerShell&lt;a class="anchor" href="#powershell"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="oh-my-posh"&gt;Oh My Posh&lt;a class="anchor" href="#oh-my-posh"&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 安装&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget install JanDeDobbeleer.OhMyPosh --source winget 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 修改字体&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://ohmyposh.dev/docs/installation/fonts
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 修改配置文件&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://ohmyposh.dev/docs/installation/prompt
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;code &lt;span style="color:#ef6155"&gt;$PROFILE&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 使用主题&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;https://ohmyposh.dev/docs/installation/customize
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;oh-my-posh init pwsh --config &lt;span style="color:#48b685"&gt;&amp;#34;stelbent-compact.minimal&amp;#34;&lt;/span&gt; | Invoke-Expression&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="pscompletions-psc"&gt;PSCompletions (psc)&lt;a class="anchor" href="#pscompletions-psc"&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;一个补全管理器，为 PowerShell 带来更出色、更简便的 Tab 补全体验。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;code &lt;span style="color:#ef6155"&gt;$PROFILE&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 修改配置文件&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Import-Module PSCompletions&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/winget/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/winget/</guid><description>&lt;h1 id="winget"&gt;Winget&lt;a class="anchor" href="#winget"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;微软推出的基于命令行的包管理器，类似于 Chocolatey。&lt;/p&gt;
-&lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://learn.microsoft.com/en-us/windows/package-manager/"&gt;WinGet&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/microsoft/winget-cli"&gt;winget-cli&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://learn.microsoft.com/zh-cn/windows/package-manager/winget/#commands"&gt;WinGet命令&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="命令"&gt;命令&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget search &amp;lt;packageName&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget install &amp;lt;Package ID&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget uninstall &amp;lt;Package ID&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget upgrade &amp;lt;Package ID&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 升级到特定的版本&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget upgrade &amp;lt;Package ID&amp;gt; -v &amp;lt;version&amp;gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 升级所有应用&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget upgrade --all 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 将本机安装的 Package 导出成 json 文件，加上 --include-versions 表示导出时需要包括版本&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget export -o &amp;lt;OutputPath&amp;gt; --include-versions
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 加上 --ignore-unavailable 跳过无法安装的部分，避免阻塞整个流程&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;winget import -i &amp;lt;JsonPath&amp;gt; --ignore-versions --ignore-unavailable&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/wsl-debian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/wsl-debian/</guid><description>&lt;h1 id="wsl-debian"&gt;Wsl debian&lt;a class="anchor" href="#wsl-debian"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;我的默认base debian&lt;/p&gt;
-&lt;h2 id="安装wsl"&gt;安装wsl&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 版本&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --list --online
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 安装debian&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --install -d Debian&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="禁用-wsl-的-windowspath-互操作性"&gt;禁用 WSL 的 Windows&lt;code&gt;$PATH&lt;/code&gt; 互操作性&lt;a class="anchor" href="#%e7%a6%81%e7%94%a8-wsl-%e7%9a%84-windowspath-%e4%ba%92%e6%93%8d%e4%bd%9c%e6%80%a7"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 运行以下命令以**root权限**打开文件：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo vi /etc/wsl.conf
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 输入您的 WSL 用户密码。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 单击`i`进入编辑模式（插入模式）。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 输入或修改内容：&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[&lt;/span&gt;interop&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;appendWindowsPath&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt; false
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 单击`Esc`退出编辑模式。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 输入`:wq`(保存并退出)。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 修改`/etc/wsl.conf`后，您必须完全关闭并重新启动 WSL 才能更改生效。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wsl --shutdown&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="进入wsl"&gt;进入wsl&lt;a class="anchor" href="#%e8%bf%9b%e5%85%a5wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# base&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt install -y curl wget vim git build-essential iputils-ping net-tools htop dnsutils unzip zip procps 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install git-lfs
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git lfs install
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清理安装产生的缓存，节省 WSL 空间&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt autoremove -y &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt clean&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装脚本"&gt;安装脚本&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85%e8%84%9a%e6%9c%ac"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote class='book-hint '&gt;
-&lt;p&gt;安装 lazygit&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/wsl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/wsl/</guid><description>&lt;h1 id="wsl"&gt;wsl&lt;a class="anchor" href="#wsl"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id="导出"&gt;导出&lt;a class="anchor" href="#%e5%af%bc%e5%87%ba"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 体积小&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; wsl --export aaa D:&lt;span style="color:#f99b15"&gt;\l&lt;/span&gt;inux&lt;span style="color:#f99b15"&gt;\a&lt;/span&gt;aa.tar.gz --format tar.gz
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 体积大&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; wsl --export aaa e:&lt;span style="color:#f99b15"&gt;\a&lt;/span&gt;aa.tar&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="win转发netsh命令"&gt;win转发netsh命令&lt;a class="anchor" href="#win%e8%bd%ac%e5%8f%91netsh%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;需要管理员运行，必须蓝色的那个powershell&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清空所有规则&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;netsh interface portproxy reset
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 删除特定的一条规则&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;netsh interface portproxy delete v4tov4 &lt;span style="color:#ef6155"&gt;listenport&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=[&lt;/span&gt;端口号&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#ef6155"&gt;listenaddress&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=[&lt;/span&gt;监听地址&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# netsh interface portproxy delete v4tov4 listenport=8080 listenaddress=0.0.0.0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 查询&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;netsh interface portproxy show all
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 转发&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 获取WSL的内部IP&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hostname -I
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 在Windows中设置转发&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;netsh interface portproxy add v4tov4 &lt;span style="color:#ef6155"&gt;listenport&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=[&lt;/span&gt;外部访问端口&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#ef6155"&gt;listenaddress&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;0.0.0.0 &lt;span style="color:#ef6155"&gt;connectport&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=[&lt;/span&gt;WSL内部端口&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#ef6155"&gt;connectaddress&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=[&lt;/span&gt;WSL内部IP&lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=172.20.10.5 &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# netsh interface portproxy add v4tov4 listenport=8317 listenaddress=0.0.0.0 connectport=8317 connectaddress=172.19.187.220&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="获取当前机器-ip"&gt;获取当前机器 IP&lt;a class="anchor" href="#%e8%8e%b7%e5%8f%96%e5%bd%93%e5%89%8d%e6%9c%ba%e5%99%a8-ip"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hostname -I | awk &lt;span style="color:#48b685"&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 172.19.187.220&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="使用-tar-进行迁移"&gt;使用 tar 进行迁移&lt;a class="anchor" href="#%e4%bd%bf%e7%94%a8-tar-%e8%bf%9b%e8%a1%8c%e8%bf%81%e7%a7%bb"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 在发行版 A 中&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar -cvzf my_files.tar.gz /path/to/your/folder
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 假设你在发行版 B&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar -xvzf my_files.tar.gz
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 快速清理现有的 .Identifier 文件&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;find . -name &lt;span style="color:#48b685"&gt;&amp;#34;*:Zone.Identifier&amp;#34;&lt;/span&gt; -type f -delete
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 或者如果文件名直接显示为 .Identifier&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;find . -name &lt;span style="color:#48b685"&gt;&amp;#34;*.Identifier&amp;#34;&lt;/span&gt; -type f -delete
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rm -rf 文件夹名
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rm 文件名.txt&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/yazi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/yazi/</guid><description>&lt;h1 id="yazi"&gt;Yazi&lt;a class="anchor" href="#yazi"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Alt+.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Yazi 终端文件管理器</title><link>https://pingnas.github.io/hugonote/docs/cli/yazi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/yazi/</guid><description>&lt;h1 id="yazi"&gt;Yazi&lt;a class="anchor" href="#yazi"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;基于异步 I/O，用 Rust 编写的超快终端文件管理器&lt;/p&gt;
 &lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/sxyazi/yazi"&gt;yazi&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://yazi-rs.github.io/"&gt;docs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="ubuntu-wsl"&gt;ubuntu wsl&lt;a class="anchor" href="#ubuntu-wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote class='book-hint '&gt;
-&lt;p&gt;安装&lt;/p&gt;
-&lt;/blockquote&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://github.com/sxyazi/yazi/releases/latest/download/yazi-x86_64-unknown-linux-gnu.deb
+&lt;h2 id="安装-wsl"&gt;安装 (wsl)&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85-wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;set -e
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install ./yazi-x86_64-unknown-linux-gnu.deb
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;ARCH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#815ba4"&gt;$(&lt;/span&gt;uname -m&lt;span style="color:#815ba4"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;case&lt;/span&gt; &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$ARCH&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt; in
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; x86_64&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt; &lt;span style="color:#ef6155"&gt;FILE&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;yazi-x86_64-unknown-linux-gnu.deb&amp;#34;&lt;/span&gt; ;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; aarch64|arm64&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt; &lt;span style="color:#ef6155"&gt;FILE&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;yazi-aarch64-unknown-linux-gnu.deb&amp;#34;&lt;/span&gt; ;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; *&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt; echo &lt;span style="color:#48b685"&gt;&amp;#34;❌ 架构不支持&amp;#34;&lt;/span&gt;; exit &lt;span style="color:#f99b15"&gt;1&lt;/span&gt; ;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;esac&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/zsh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/zsh/</guid><description>&lt;h1 id="zsh"&gt;zsh&lt;a class="anchor" href="#zsh"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id="oh-my-zsh"&gt;oh-my-zsh&lt;a class="anchor" href="#oh-my-zsh"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote class='book-hint '&gt;
-&lt;p&gt;.zshrc&lt;/p&gt;
-&lt;/blockquote&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;if&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;[[&lt;/span&gt; -r &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;XDG_CACHE_HOME&lt;/span&gt;&lt;span style="color:#815ba4"&gt;:-&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$HOME&lt;/span&gt;/.cache&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;/p10k-instant-prompt-&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;USER&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;.zsh&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;]]&lt;/span&gt;; &lt;span style="color:#815ba4"&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; source &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;XDG_CACHE_HOME&lt;/span&gt;&lt;span style="color:#815ba4"&gt;:-&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$HOME&lt;/span&gt;/.cache&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;/p10k-instant-prompt-&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;USER&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;.zsh&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;URL&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;https://github.com/sxyazi/yazi/releases/latest/download/&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[[&lt;/span&gt; -f ~/.p10k.zsh &lt;span style="color:#5bc4bf"&gt;]]&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; source ~/.p10k.zsh
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;export &lt;span style="color:#ef6155"&gt;ZSH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$HOME&lt;/span&gt;&lt;span style="color:#48b685"&gt;/.oh-my-zsh&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;📥 正在下载 &lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt; 到当前目录...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -L -O &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$URL&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;ZSH_THEME&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;powerlevel10k/powerlevel10k&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;📦 正在安装并自动清理本地包...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install -y &lt;span style="color:#48b685"&gt;&amp;#34;./&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;export &lt;span style="color:#ef6155"&gt;LANG&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;en_US.UTF-8
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;plugins&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=(&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; git 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; z 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sudo 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; extract 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; web-search 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; zsh-autosuggestions 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; zsh-syntax-highlighting 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; zsh-completions 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;source &lt;span style="color:#ef6155"&gt;$ZSH&lt;/span&gt;/oh-my-zsh.sh
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[&lt;/span&gt; -d &lt;span style="color:#48b685"&gt;&amp;#34;/opt/nvim-linux-x86_64/bin&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; export &lt;span style="color:#ef6155"&gt;PATH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$PATH&lt;/span&gt;&lt;span style="color:#48b685"&gt;:/opt/nvim-linux-x86_64/bin&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#5bc4bf"&gt;[&lt;/span&gt; -d &lt;span style="color:#48b685"&gt;&amp;#34;/opt/nvim-linux-arm64/bin&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;]&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; export &lt;span style="color:#ef6155"&gt;PATH&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$PATH&lt;/span&gt;&lt;span style="color:#48b685"&gt;:/opt/nvim-linux-arm64/bin&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;v&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;vi&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;vim&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;nvim&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;if&lt;/span&gt; command -v eza &amp;gt; /dev/null; &lt;span style="color:#815ba4"&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;ls&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza --icons --group-directories-first&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;ll&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza -lh --icons --git --group-directories-first&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;la&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza -lah --icons --git --group-directories-first&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;tree&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;eza --tree --icons&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;else&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; alias &lt;span style="color:#ef6155"&gt;l&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;ls -lah&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;lg&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;lazygit&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;y&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;yazi&amp;#34;&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias ..&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;cd ..&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias ...&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;cd ../..&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias ....&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;cd ../../..&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias -- -&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;cd -&amp;#39;&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;cls&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;clear&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;ip&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;ip -color=auto&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;ping&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;gping&amp;#34;&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;alias &lt;span style="color:#ef6155"&gt;vf&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#39;nvim $(fzf)&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zstyle &lt;span style="color:#48b685"&gt;&amp;#39;:completion:*&amp;#39;&lt;/span&gt; matcher-list &lt;span style="color:#48b685"&gt;&amp;#39;m:{a-zA-Z}={A-Za-z}&amp;#39;&lt;/span&gt; &lt;span style="color:#48b685"&gt;&amp;#39;r:|[._-]=* r:|=*&amp;#39;&lt;/span&gt; &lt;span style="color:#48b685"&gt;&amp;#39;l:|=* r:|=*&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zstyle &lt;span style="color:#48b685"&gt;&amp;#39;:completion:*&amp;#39;&lt;/span&gt; use-cache yes
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;zstyle &lt;span style="color:#48b685"&gt;&amp;#39;:completion:*&amp;#39;&lt;/span&gt; cache-path &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$ZSH_CACHE_DIR&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote class='book-hint '&gt;
-&lt;p&gt;.p10k.zsh&lt;/p&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/%E6%B8%85%E7%90%86%E5%BC%80%E5%8F%91%E5%91%BD%E4%BB%A4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/%E6%B8%85%E7%90%86%E5%BC%80%E5%8F%91%E5%91%BD%E4%BB%A4/</guid><description>&lt;h1 id="清理开发目录"&gt;清理开发目录&lt;a class="anchor" href="#%e6%b8%85%e7%90%86%e5%bc%80%e5%8f%91%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id="clean-dev-dirs"&gt;clean-dev-dirs&lt;a class="anchor" href="#clean-dev-dirs"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一款快速高效的命令行工具，可递归清理 16 种语言生态系统中的开发构建目录，从而回收磁盘空间。支持 Rust、Node.js、Python、Go、Java/Kotlin、C/C++、Swift、.NET/C#、Ruby、Elixir、Deno、PHP、Haskell、Dart/Flutter、Zig 和 Scala。&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/clean-dev-dirs/clean-dev-dirs"&gt;https://github.com/clean-dev-dirs/clean-dev-dirs&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清理当前目录&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 手动选择要清理的项目 --interactive&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清理指定目录&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs ~/Projects
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清理多个目录&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs ~/Projects ~/work/client
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Rust projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs --project-type rust
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# or use short flag&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p rust
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Node.js projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p node
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Python projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p python
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Go projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p go
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Java/Kotlin projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p java
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only C/C++ projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p cpp
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Swift projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p swift
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only .NET/C# projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p dotnet
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Ruby projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p ruby
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Elixir projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p elixir
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Deno projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p deno
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only PHP projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p php
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Haskell projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p haskell
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Dart/Flutter projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p dart
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Zig projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p zig
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean only Scala projects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p scala
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# Clean all project types (default)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;clean-dev-dirs -p all&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;✅ 安装成功，已自动清除 &lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;。&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;yazi --version&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>
