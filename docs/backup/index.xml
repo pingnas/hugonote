@@ -4,6 +4,10 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://chocolatey.org/"&gt;The Package Manager for Windows&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id="安装"&gt;安装&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://chocolatey.org/install"&gt;https://chocolatey.org/install&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="命令"&gt;命令&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 查找 xxx 安装包&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;choco search xxx
