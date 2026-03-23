@@ -89,3 +89,12 @@ rm -rf 文件夹名
 rm 文件名.txt
 ```
 
+## 迁移文件夹后可能因所有权问题导致获取不了文件
+```sh
+# 找出当前目录下所有者不是你自己的文件
+find . ! -user $(whoami)
+
+
+# 找出当前目录下所有者不是你的文件，并批量修改所有者
+sudo find . ! -user $(whoami) -exec chown $(whoami):$(whoami) {} +
+```
