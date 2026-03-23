@@ -5,6 +5,8 @@ Windows 程序包管理器，现代软件自动化
 
 - [The Package Manager for Windows](https://chocolatey.org/)
 
+## 安装
+- https://chocolatey.org/install
 
 ## 命令
 

@@ -6,5 +6,5 @@ ssh-keygen -t ed25519 -C "1@email.com" -f ~/.ssh/1 # 生成名为 "1" 的 Ed2551
 
 cat ~/.ssh/1.pub # 查看并复制公钥 "1" 的内容
 
-ssh -T git@1.github.com
+ssh -T git@1.github.com # 测试连接
 ```
