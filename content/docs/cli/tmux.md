@@ -6,8 +6,8 @@
 
 - [Tmux 使用教程 阮一峰](https://www.ruanyifeng.com/blog/2019/10/tmux.html)
 - [最常用的快捷键和命令的 tmux 备忘单快速参考](https://wangchujiang.com/reference/docs/tmux.html)
-- [tmux](https://github.com/tmux/tmux)
-- [.tmux](https://github.com/gpakosz/.tmux)
+- [tmux仓库](https://github.com/tmux/tmux)
+- [.tmux配置](https://github.com/gpakosz/.tmux)
 
 ## 命令
 
@@ -273,3 +273,41 @@ Ctrl+b :
 # 切换鼠标模式的开启或关闭
 <prefix> m 
 ```
+
+
+## 安装 (wsl)
+```sh
+#!/bin/bash
+set -e
+
+ARCH=$(uname -m)
+case "$ARCH" in
+    x86_64)         BIN_ARCH="x86_64" ;;
+    aarch64|arm64)  BIN_ARCH="arm64" ;;
+    *) echo "❌ 架构不支持: $ARCH"; exit 1 ;;
+esac
+
+echo "🔍 正在搜索最新版 Tmux..."
+URL_LATEST="https://github.com/tmux/tmux-builds/releases/latest"
+REAL_URL=$(curl -Ls -o /dev/null -w %{url_effective} "$URL_LATEST")
+TAG=$(basename "$REAL_URL")
+VERSION=${TAG#v} 
+
+FILE="tmux-${VERSION}-linux-${BIN_ARCH}.tar.gz"
+URL="https://github.com/tmux/tmux-builds/releases/download/${TAG}/${FILE}"
+
+echo "📥 正在下载 $FILE 到当前目录..."
+curl -L -O "$URL"
+
+echo "📦 正在安装并自动清理..."
+
+tar -xzf "$FILE" tmux
+
+sudo install -m 755 tmux /usr/local/bin/tmux
+
+rm -f "$FILE" tmux
+
+echo "✅ tmux 安装完成。"
+tmux -V
+```
+ 

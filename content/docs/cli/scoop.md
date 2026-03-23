@@ -3,8 +3,7 @@
 适用于 Windows 的命令行安装程序
 
 ## 参考
-
-https://scoop.sh/
+- [scoop doc](https://scoop.sh/)
 
 
 ## 命令

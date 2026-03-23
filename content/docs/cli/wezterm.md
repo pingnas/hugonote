@@ -1,11 +1,15 @@
+---
+title: "WezTerm 跨平台终端模拟器"
+---
+
 # WezTerm
 一个功能强大的跨平台终端模拟器和多路复用器
 
 ## 参考
 
-- [docs](https://wezterm.org/)
-- [wezterm](https://github.com/wezterm/wezterm)
-- [wezterm-config](https://github.com/KevinSilvester/wezterm-config)
+- [wezterm docs](https://wezterm.org/)
+- [wezterm仓库](https://github.com/wezterm/wezterm)
+- [wezterm-config配置](https://github.com/KevinSilvester/wezterm-config)
 
 ## win使用
 

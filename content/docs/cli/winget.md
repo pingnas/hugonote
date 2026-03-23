@@ -3,8 +3,8 @@
 
 ## 资料
 
-- [WinGet](https://learn.microsoft.com/en-us/windows/package-manager/)
-- [winget-cli](https://github.com/microsoft/winget-cli)
+- [WinGet文档](https://learn.microsoft.com/en-us/windows/package-manager/)
+- [winget-cli文档](https://github.com/microsoft/winget-cli)
 - [WinGet命令](https://learn.microsoft.com/zh-cn/windows/package-manager/winget/#commands)
 
 ## 命令

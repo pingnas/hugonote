@@ -1,12 +1,16 @@
-# 清理开发目录
+---
+title: "clean-dev-dirs 清理开发目录"
+---
 
-
-## clean-dev-dirs
+# clean-dev-dirs
 
 一款快速高效的命令行工具，可递归清理 16 种语言生态系统中的开发构建目录，从而回收磁盘空间。支持 Rust、Node.js、Python、Go、Java/Kotlin、C/C++、Swift、.NET/C#、Ruby、Elixir、Deno、PHP、Haskell、Dart/Flutter、Zig 和 Scala。
 
-https://github.com/clean-dev-dirs/clean-dev-dirs
+## 资料
+- [clean-dev-dirs](https://github.com/clean-dev-dirs/clean-dev-dirs)
 
+
+## 命令
 ```sh
 
 # 清理当前目录

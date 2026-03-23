@@ -6,6 +6,7 @@
 - [lazygit仓库](https://github.com/jesseduffield/lazygit)
 - [按键绑定文档](https://github.com/jesseduffield/lazygit/blob/master/docs/keybindings/Keybindings_zh-CN.md)
 - [如何使用Lazygit 大幅提升使用Git 的效率](https://chishengliu.com/zh-tw/posts/lazygit-tutorial/)
+
 ## 常用
 
 > 全局快捷键
@@ -130,4 +131,38 @@ v
 
 # 回到左半边的区块
 Esc
+```
+
+## 安装 (wsl)
+```sh
+#!/bin/bash
+set -e
+
+ARCH=$(uname -m)
+case "$ARCH" in
+    x86_64)         BIN_ARCH="x86_64" ;;
+    aarch64|arm64)  BIN_ARCH="arm64" ;;
+    *) echo "❌ 架构不支持: $ARCH"; exit 1 ;;
+esac
+
+echo "🔍 正在搜索最新版 Lazygit..."
+URL_LATEST="https://github.com/jesseduffield/lazygit/releases/latest"
+REAL_URL=$(curl -Ls -o /dev/null -w %{url_effective} "$URL_LATEST")
+TAG=$(basename "$REAL_URL")
+VERSION=${TAG#v}
+
+FILE="lazygit_${VERSION}_Linux_${BIN_ARCH}.tar.gz"
+URL="https://github.com/jesseduffield/lazygit/releases/download/${TAG}/${FILE}"
+
+echo "📥 正在下载 $FILE 到当前目录..."
+curl -L -O "$URL"
+
+echo "📦 正在安装..."
+tar -xzf "$FILE" lazygit
+sudo install -m 755 lazygit /usr/local/bin/lazygit
+
+rm -f "$FILE" lazygit
+
+echo "✅ lazygit 安装完成。"
+lazygit --version
 ```

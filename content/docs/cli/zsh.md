@@ -65,4 +65,4 @@ zstyle ':completion:*' cache-path "$ZSH_CACHE_DIR"
 > .p10k.zsh
 
 https://github.com/romkatv/powerlevel10k/tree/master/config 
-随便挑个
+随便挑个使用
