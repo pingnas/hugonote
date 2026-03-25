@@ -11,7 +11,7 @@ ssh -T git@1.github.com # 测试连接
 
 ## 安装(wsl)
 ```sh
-sudo apt update && sudo apt install -y curl wget vim git git-lfs
+sudo apt update && sudo apt install -y curl git git-lfs
 
 git lfs install
 ```

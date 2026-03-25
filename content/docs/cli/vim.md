@@ -1,6 +1,19 @@
-# neovim
+# vim
 
-## 安装(wsl)
+## 资料
+- [docs](https://www.vim.org/docs.php)
+- [Vim 中文文档计划](https://yianwillis.github.io/vimcdoc/doc/help.html)
+- [vimcdoc 中文仓库](https://github.com/yianwillis/vimcdoc)
+- [Learn-Vim(the Smart Way) 中文翻译](https://wsdjeg.net/wiki/learn-vim/)
+- [neovim](https://neovim.io/)
+- [lazyvim](https://www.lazyvim.org/)
+
+## vim
+
+
+## neovim
+
+### 安装(wsl)
 ```sh
 #!/bin/bash
 set -e
@@ -39,4 +52,11 @@ fi
 
 echo "------------------------------------------"
 /opt/$DIR_NAME/bin/nvim --version | head -n 1
+```
+
+### lazyvim
+
+```sh
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+nvim
 ```
