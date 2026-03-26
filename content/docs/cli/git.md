@@ -15,3 +15,8 @@ sudo apt update && sudo apt install -y curl git git-lfs
 
 git lfs install
 ```
+
+## git submodule
+```sh
+git submodule update --init --recursive
+```
