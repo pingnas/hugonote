@@ -149,7 +149,21 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ssh -T git@1.github.com &lt;span style="color:#8d8687"&gt;# 测试连接&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装wsl"&gt;安装(wsl)&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt install -y curl git git-lfs
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git lfs install&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</guid><description>&lt;h1 id="lazydocker"&gt;lazydocker&lt;a class="anchor" href="#lazydocker"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git lfs install&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="git-submodule"&gt;git submodule&lt;a class="anchor" href="#git-submodule"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git submodule update --init --recursive&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/hugo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/hugo/</guid><description>&lt;h1 id="hugo"&gt;hugo&lt;a class="anchor" href="#hugo"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="安装wsl"&gt;安装(wsl)&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85wsl"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd /tmp
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 要换版本，直接改下面这行的数字就行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;VERSION&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;0.159.0&amp;#34;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://github.com/gohugoio/hugo/releases/download/v&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;VERSION&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;/hugo_extended_&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;VERSION&lt;/span&gt;&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;_linux-64bit.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar -xzf hugo_extended*.tar.gz hugo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo mv hugo /usr/local/bin/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hugo version&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/lazydocker/</guid><description>&lt;h1 id="lazydocker"&gt;lazydocker&lt;a class="anchor" href="#lazydocker"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;更轻松的 Docker 管理方式&lt;/p&gt;
 &lt;h2 id="资料"&gt;资料&lt;a class="anchor" href="#%e8%b5%84%e6%96%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
@@ -818,4 +832,17 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install -y &lt;span style="color:#48b685"&gt;&amp;#34;./&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt; &lt;span style="color:#5bc4bf"&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#48b685"&gt;&amp;#34;✅ 安装成功，已自动清除 &lt;/span&gt;&lt;span style="color:#ef6155"&gt;$FILE&lt;/span&gt;&lt;span style="color:#48b685"&gt;。&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;yazi --version&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;yazi --version&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装win"&gt;安装(win)&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85win"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://yazi-rs.github.io/docs/installation#install-with-scoop"&gt;使用 Scoop 安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://yazi-rs.github.io/docs/installation#windows"&gt;添加file到环境变量&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/yazi-rs/flavors"&gt;主题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/BennyOe/tokyo-night.yazi"&gt;tokyo-night主题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 主题目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;C:&lt;span style="color:#f99b15"&gt;\U&lt;/span&gt;sers&lt;span style="color:#f99b15"&gt;\x&lt;/span&gt;xx&lt;span style="color:#f99b15"&gt;\A&lt;/span&gt;ppData&lt;span style="color:#f99b15"&gt;\R&lt;/span&gt;oaming&lt;span style="color:#f99b15"&gt;\y&lt;/span&gt;azi&lt;span style="color:#f99b15"&gt;\c&lt;/span&gt;onfig
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 然后里面是&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;flavors 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;theme.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 内容看：https://github.com/BennyOe/tokyo-night.yazi&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item></channel></rss>
