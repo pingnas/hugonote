@@ -106,3 +106,9 @@ Alt+.
 
 
 ```
+
+## 配置
+
+修改字体:
+
+{{< img "images/posts/wezterm/image.png" >}}
