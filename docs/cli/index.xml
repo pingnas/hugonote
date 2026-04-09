@@ -225,7 +225,42 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop install &amp;lt;app&amp;gt;@&amp;lt;version&amp;gt;&lt;span style="color:#48b685"&gt;`&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 清理旧版本 &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop cleanup &amp;lt;app_name&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/tmux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/tmux/</guid><description>&lt;h1 id="tmux"&gt;Tmux&lt;a class="anchor" href="#tmux"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop cleanup &amp;lt;app_name&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/stow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/stow/</guid><description>&lt;h1 id="stow"&gt;Stow&lt;a class="anchor" href="#stow"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;管理 dotfiles&lt;/p&gt;
+&lt;h2 id="安装"&gt;安装&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install stow&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="命令"&gt;命令&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 在 ~/dotfiles 目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 将 nvim 文件夹内容链接到 ~/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;stow nvim
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 模拟执行 只打印结果而不实际操作，用来检查路径对不对&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;stow -nv nvim
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 更新配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;stow -R nvim
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 撤销配置 清除软链接&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;stow -D nvim
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;# 输出每一条链接创建的具体路径（-vv 可以更详细）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;stow -v nvim&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="示例"&gt;示例&lt;a class="anchor" href="#%e7%a4%ba%e4%be%8b"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-txt" data-lang="txt"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;~/dotfiles/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;└── tmux/ &amp;lt;-- 软件包名
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └── .config/ &amp;lt;-- 模拟home目录下的文件夹
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └── tmux/ &amp;lt;-- 模拟home目录下的文件夹
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └── tmux.conf &amp;lt;-- 实际的配置文件&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd ~/dotfiles
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;stow -v tmux&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="安装脚本"&gt;安装脚本&lt;a class="anchor" href="#%e5%ae%89%e8%a3%85%e8%84%9a%e6%9c%ac"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#2f1e2e;background-color:#e7e9db;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#8d8687"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ef6155"&gt;list&lt;/span&gt;&lt;span style="color:#5bc4bf"&gt;=(&lt;/span&gt;zsh git&lt;span style="color:#5bc4bf"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#815ba4"&gt;$(&lt;/span&gt;dirname &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$0&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#815ba4"&gt;)&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;for&lt;/span&gt; i in &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#f99b15"&gt;${&lt;/span&gt;&lt;span style="color:#ef6155"&gt;list&lt;/span&gt;[@]&lt;span style="color:#f99b15"&gt;}&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;; &lt;span style="color:#815ba4"&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; stow -R -v &lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;&lt;span style="color:#ef6155"&gt;$i&lt;/span&gt;&lt;span style="color:#48b685"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#815ba4"&gt;done&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title/><link>https://pingnas.github.io/hugonote/docs/cli/tmux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pingnas.github.io/hugonote/docs/cli/tmux/</guid><description>&lt;h1 id="tmux"&gt;Tmux&lt;a class="anchor" href="#tmux"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;一个终端复用器（terminal multiplexer）&lt;/p&gt;
 &lt;h2 id="参考"&gt;参考&lt;a class="anchor" href="#%e5%8f%82%e8%80%83"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
